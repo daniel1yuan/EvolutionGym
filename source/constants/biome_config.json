@@ -1,0 +1,11 @@
+{
+  version: 0
+  biomes: {
+    DESERT: {
+    }
+    FOREST: {
+    }
+    MOUNTAIN:{
+    }
+  }
+}
