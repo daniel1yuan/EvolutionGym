@@ -29,6 +29,11 @@ class Biome(object):
     self.g = int(color_rng.random()*255)
     self.b = int(color_rng.random()*255)
 
+  def set_color(self, r, g, b):
+    self.r = r
+    self.g = g
+    self.b = b
+
 
 class Tile(object):
   '''
