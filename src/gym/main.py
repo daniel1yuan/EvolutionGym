@@ -2,8 +2,9 @@
 # @author: Daniel Yuan
 # @file: main.py
 
-from Tile import *
-from Terrain import *
+from Tile import Biome
+from sim import BaseSimulation
+from gui import GUI
 
 def main():
     biomes = []
@@ -14,9 +15,10 @@ def main():
     biomes.append(Biome("test4", 5, 4, 5))
     biomes.append(Biome("test5", 6, 4, 5))
     biomes.append(Biome("test6", 7, 4, 5))
-    terrain = Terrain(biomes, 10, 200, 200)
-    print terrain
-    print terrain.terrain
+    sim = BaseSimulation([], biomes=biomes)
+    gui = GUI(sim)
+
+    # terrain = Terrain(biomes, 10, 200, 200)
 
 if __name__ == '__main__':
     main()

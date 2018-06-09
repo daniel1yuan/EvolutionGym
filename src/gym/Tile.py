@@ -11,10 +11,14 @@ class Biome(object):
   '''
   Class definition for a Biome in a terrain tile, which describes the attributes of the tile
 
-  @biome_name: The name of this type of biome
-  @initial_energy: The starting energy of the biome when the terrain is generated
-  @energy_generation: The amount of energy added into the tile per game tick
-  @cost: The amount of energy needed to enter the tile
+  Attributes:
+    @biome_name (str): The name of this type of biome
+    @initial_energy (int): The starting energy of the biome when the terrain is generated
+    @energy_generation (int): The amount of energy added into the tile per game tick
+    @cost (int): The amount of energy needed to enter the tile
+    @r (int [0,255]): Red channel color for biome
+    @g (int [0,255]): Green channel color for biome
+    @b (int [0,255]): Blue channel color for biome
   '''
   def __init__(self, biome_name, initial_energy, energy_generation, cost):
     self.biome_name = biome_name
@@ -22,7 +26,7 @@ class Biome(object):
     self.energy_generation = energy_generation
     self.cost = cost
 
-    # Color for biome
+    # Generate random color for biome seeded by biome name
     color_rng = Random()
     color_rng.seed(biome_name)
     self.r = int(color_rng.random()*255)
@@ -39,8 +43,9 @@ class Tile(object):
   '''
   Class definition for a Tile in terrain
 
-  @biome: The biome that this tile hosts
-  @energy: Amount of energy that this tile currently has
+  Attributes:
+    @biome (Biome): The biome that this tile hosts
+    @energy (int): Amount of energy that this tile currently has
   '''
   def __init__(self, biome):
     self.biome = biome

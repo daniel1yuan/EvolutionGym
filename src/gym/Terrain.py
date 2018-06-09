@@ -25,13 +25,13 @@ class Terrain (object):
   '''
   Class definition for the Terrain
 
-  @biomes: Array of biomes that will be used for this terrain generation
-  @seed: Seed used to seed Perlin noise for terrain generation
-  @height: Height of terrain
-  @width: Width of terrain
+  @biomes ([Biome]): Array of biomes that will be used for this terrain generation
+  @seed (int): Seed used to seed Perlin noise for terrain generation
+  @height (int): Height of terrain
+  @width (int): Width of terrain
   '''
 
-  def __init__(self, biomes, seed = DEFAULT_SEED, height = DEFAULT_HEIGHT, width = DEFAULT_WIDTH):
+  def __init__(self, biomes, width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, seed = DEFAULT_SEED):
     self.seed = seed
     self.height = height
     self.width = width
